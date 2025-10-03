@@ -21,6 +21,7 @@ export const Hero = () => {
 
   return (
     <section 
+      id="hero"
       className="hero-section relative min-h-[600px] flex items-center justify-center bg-primary text-primary-foreground overflow-hidden"
       style={{
         backgroundImage: `linear-gradient(rgba(26, 40, 55, 0.85), rgba(26, 40, 55, 0.85)), url(${heroImage})`,
