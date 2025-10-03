@@ -22,15 +22,30 @@ import {
 export const PrintDownloadControls = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
+  const [showMobileBar, setShowMobileBar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
-  // Show scroll-to-top button when user scrolls down
+  // Show/hide mobile bar and scroll-to-top button based on scroll
   useEffect(() => {
     const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 400);
+      const currentScrollY = window.scrollY;
+      
+      // Show scroll-to-top button when scrolled down
+      setShowScrollTop(currentScrollY > 400);
+      
+      // Hide mobile bar when scrolling down, show when scrolling up
+      if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        setShowMobileBar(false); // Scrolling down
+      } else {
+        setShowMobileBar(true); // Scrolling up
+      }
+      
+      setLastScrollY(currentScrollY);
     };
-    window.addEventListener("scroll", handleScroll);
+    
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   const handlePrint = () => {
     toast.info("Opening print dialog...", {
@@ -206,7 +221,11 @@ export const PrintDownloadControls = () => {
       </div>
 
       {/* Mobile Bottom Bar */}
-      <div className="fixed bottom-0 left-0 right-0 bg-background/95 backdrop-blur-sm border-t border-border p-3 flex gap-2 lg:hidden z-50 no-print">
+      <div 
+        className={`fixed bottom-0 left-0 right-0 bg-background/95 backdrop-blur-sm border-t border-border p-3 flex gap-2 lg:hidden z-50 no-print transition-transform duration-300 ${
+          showMobileBar ? 'translate-y-0' : 'translate-y-full'
+        }`}
+      >
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
