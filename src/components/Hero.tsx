@@ -36,6 +36,8 @@ export const Hero = () => {
               src={companyLogo} 
               alt="Prime Trading PNG Limited - Import & Export" 
               className="h-32 md:h-40 w-auto hover-lift"
+              loading="eager"
+              fetchPriority="high"
             />
           </div>
 

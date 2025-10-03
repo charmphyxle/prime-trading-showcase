@@ -70,6 +70,9 @@ export const Services = () => {
                       src={service.icon} 
                       alt={`${service.title} icon`}
                       className="h-20 w-20 object-contain"
+                      loading="lazy"
+                      width="80"
+                      height="80"
                     />
                   </div>
                   <CardTitle className="text-xl">{service.title}</CardTitle>

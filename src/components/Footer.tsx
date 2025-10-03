@@ -35,6 +35,9 @@ export const Footer = () => {
                 src={companyLogo} 
                 alt="Prime Trading PNG Limited Logo" 
                 className="h-20 w-auto mb-4"
+                loading="lazy"
+                width="160"
+                height="80"
               />
               <p className="text-sm text-primary-foreground/90 leading-relaxed">
                 Your trusted partner for industrial solutions across Papua New Guinea since 2015.
