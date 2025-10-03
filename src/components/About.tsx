@@ -6,14 +6,14 @@
 
 export const About = () => {
   return (
-    <section id="about" className="py-16 md:py-20 bg-background">
+    <section id="about" className="py-12 md:py-16 lg:py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-foreground gradient-text">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 md:mb-8 text-foreground gradient-text px-4">
             About Prime Trading PNG Limited
           </h2>
           
-          <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
+          <div className="space-y-4 md:space-y-6 text-base md:text-lg leading-relaxed text-muted-foreground px-4">
             <p className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
               Prime Trading PNG Limited is a Port Moresby-based trading company specializing in wholesale 
               and retail distribution of modular (container) housing solutions, jumbo bags, and spare parts 
