@@ -149,8 +149,8 @@ export const PrintDownloadControls = () => {
 
   return (
     <>
-      {/* Floating Action Buttons - Desktop */}
-      <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-50 no-print">
+      {/* Floating Action Buttons - Desktop Only */}
+      <div className="fixed bottom-6 right-6 lg:flex flex-col gap-3 z-50 no-print hidden">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
