@@ -6,7 +6,7 @@
  */
 
 import { Button } from "@/components/ui/button";
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, ChevronDown } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
 import companyLogo from "@/assets/company-logo.jpg";
 
@@ -19,10 +19,15 @@ export const Hero = () => {
     window.location.href = `mailto:info@prime-trading.png?subject=${subject}&body=${body}`;
   };
 
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById("about");
+    aboutSection?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section 
       id="hero"
-      className="hero-section relative min-h-[600px] flex items-center justify-center bg-primary text-primary-foreground overflow-hidden"
+      className="hero-section relative h-screen flex items-center justify-center bg-primary text-primary-foreground overflow-hidden"
       style={{
         backgroundImage: `linear-gradient(rgba(26, 40, 55, 0.85), rgba(26, 40, 55, 0.85)), url(${heroImage})`,
         backgroundSize: 'cover',
@@ -88,6 +93,16 @@ export const Hero = () => {
           </div>
         </div>
       </div>
+
+      {/* Scroll Down Indicator */}
+      <button
+        onClick={scrollToAbout}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground transition-colors no-print animate-bounce"
+        aria-label="Scroll to content"
+      >
+        <span className="text-sm font-medium">Scroll Down</span>
+        <ChevronDown className="h-6 w-6" />
+      </button>
     </section>
   );
 };
