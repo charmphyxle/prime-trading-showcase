@@ -18,9 +18,37 @@ import { About } from "@/components/About";
 import { Services } from "@/components/Services";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { PrintDownloadControls } from "@/components/PrintDownloadControls";
 import { Helmet } from "react-helmet";
+import { Toaster } from "sonner";
+import { useEffect } from "react";
 
 const Index = () => {
+  // Scroll animation observer
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -100px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections
+    const sections = document.querySelectorAll("section");
+    sections.forEach((section) => {
+      section.classList.add("animate-on-scroll");
+      observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -42,6 +70,9 @@ const Index = () => {
         <meta name="twitter:title" content="Prime Trading PNG Limited" />
         <meta name="twitter:description" content="Modular housing, jumbo bags, and heavy vehicle parts for PNG industries" />
       </Helmet>
+
+      <Toaster position="top-center" richColors />
+      <PrintDownloadControls />
 
       <main className="min-h-screen">
         <Hero />

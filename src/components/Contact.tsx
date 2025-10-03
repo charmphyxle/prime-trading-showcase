@@ -73,7 +73,7 @@ export const Contact = () => {
           </p>
 
           {/* CTA Card */}
-          <Card className="mb-12 bg-primary text-primary-foreground border-none">
+          <Card className="mb-12 bg-primary text-primary-foreground border-none hover-lift card-shine">
             <CardContent className="p-8 text-center">
               <h3 className="text-2xl font-bold mb-4">Request Catalogue & Pricing</h3>
               <p className="mb-6 text-primary-foreground/90">
@@ -84,7 +84,7 @@ export const Contact = () => {
                 variant="secondary"
                 size="lg"
                 onClick={handleContact}
-                className="no-print"
+                className="no-print hover:scale-105 transition-transform"
               >
                 <Mail className="mr-2 h-5 w-5" />
                 Request Catalogue & Pricing
@@ -100,7 +100,7 @@ export const Contact = () => {
             {companyDetails.map((detail, index) => (
               <div 
                 key={index}
-                className="flex items-start gap-3 p-4 rounded-lg border bg-card hover:shadow-md transition-shadow"
+                className="flex items-start gap-3 p-4 rounded-lg border bg-card hover-lift"
               >
                 <detail.icon className="h-5 w-5 text-accent mt-1 flex-shrink-0" />
                 <div>
