@@ -12,11 +12,11 @@ import companyLogo from "@/assets/company-logo.jpg";
 
 export const Hero = () => {
   const handleContact = () => {
-    const subject = encodeURIComponent("Inquiry - Prime Trading PNG Limited");
+    const subject = encodeURIComponent("Catalogue & Pricing Request - Prime Trading PNG Limited");
     const body = encodeURIComponent(
-      "Dear Prime Trading PNG Team,\n\nI am interested in learning more about your services.\n\nPlease provide information about:\n[ ] Modular Housing Solutions\n[ ] Jumbo Bags (FIBC)\n[ ] Heavy Vehicle Spare Parts\n\nBest regards,"
+      "Dear Prime Trading PNG Team,\n\nI would like to request:\n[ ] Product catalogue\n[ ] Pricing information\n[ ] Bulk supply discussion\n\nService Interest:\n[ ] Modular Housing Solutions\n[ ] Jumbo Bags (FIBC)\n[ ] Heavy Vehicle Spare Parts\n\nBest regards,"
     );
-    window.location.href = `mailto:info@primetradingpng.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@prime-trading.png?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -53,7 +53,7 @@ export const Hero = () => {
               className="w-full sm:w-auto"
             >
               <Mail className="mr-2 h-5 w-5" />
-              Request Information
+              Request Catalogue & Pricing
             </Button>
             <Button 
               variant="outline" 
@@ -61,9 +61,9 @@ export const Hero = () => {
               asChild
               className="w-full sm:w-auto bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20"
             >
-              <a href="tel:+675XXXXXXXX">
+              <a href="tel:+61432548250">
                 <Phone className="mr-2 h-5 w-5" />
-                Call Us Today
+                +61 432 548 250
               </a>
             </Button>
           </div>
@@ -71,12 +71,12 @@ export const Hero = () => {
           {/* Quick Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 pt-8 border-t border-primary-foreground/20">
             <div className="text-center">
-              <div className="text-3xl font-bold text-accent mb-2">15+</div>
+              <div className="text-3xl font-bold text-accent mb-2">10+</div>
               <div className="text-sm text-primary-foreground/80">Years Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-accent mb-2">100%</div>
-              <div className="text-sm text-primary-foreground/80">PNG Based</div>
+              <div className="text-3xl font-bold text-accent mb-2">PNG</div>
+              <div className="text-sm text-primary-foreground/80">Based & Operated</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-accent mb-2">24/7</div>

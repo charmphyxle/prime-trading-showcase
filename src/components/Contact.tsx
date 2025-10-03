@@ -11,11 +11,11 @@ import { Building2, Mail, MapPin, Phone, FileText, Calendar } from "lucide-react
 
 export const Contact = () => {
   const handleContact = () => {
-    const subject = encodeURIComponent("Business Inquiry - Prime Trading PNG Limited");
+    const subject = encodeURIComponent("Catalogue & Pricing Request - Prime Trading PNG Limited");
     const body = encodeURIComponent(
-      "Dear Prime Trading PNG Team,\n\nI would like to inquire about:\n\nService Interest:\n[ ] Modular Housing Solutions\n[ ] Jumbo Bags (FIBC)\n[ ] Heavy Vehicle Spare Parts\n\nProject Details:\n\n\nContact Information:\nName:\nCompany:\nPhone:\n\nBest regards,"
+      "Dear Prime Trading PNG Team,\n\nI would like to request:\n[ ] Product catalogue\n[ ] Pricing information\n[ ] Bulk supply discussion\n\nService Interest:\n[ ] Modular Housing Solutions\n[ ] Jumbo Bags (FIBC)\n[ ] Heavy Vehicle Spare Parts\n\nProject Details:\n\n\nContact Information:\nName:\nCompany:\nPhone:\n\nBest regards,"
     );
-    window.location.href = `mailto:info@primetradingpng.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@prime-trading.png?subject=${subject}&body=${body}`;
   };
 
   const companyDetails = [
@@ -27,37 +27,37 @@ export const Contact = () => {
     {
       icon: FileText,
       label: "Entity Type",
-      value: "Limited Liability Company"
+      value: "Companies"
     },
     {
       icon: Calendar,
       label: "Established",
-      value: "2008" // Example - update with actual date
+      value: "17 April 2015"
     },
     {
       icon: FileText,
       label: "Registration No.",
-      value: "1-XXXXX" // Update with actual registration number
+      value: "1-139496698"
     },
     {
       icon: FileText,
       label: "TIN",
-      value: "XXXXXXXXX" // Update with actual TIN
+      value: "502889519"
     },
     {
       icon: MapPin,
       label: "Postal Address",
-      value: "P.O. Box XXXX, Port Moresby, NCD, Papua New Guinea" // Update with actual address
+      value: "PO Box 211, Port Moresby, National Capital District, Papua New Guinea"
     },
     {
       icon: Phone,
-      label: "Mobile",
-      value: "+675 XXXX XXXX" // Update with actual phone
+      label: "Contact",
+      value: "+61 432 548 250 (Chaminda Jayasinghe)"
     },
     {
       icon: Mail,
       label: "Email",
-      value: "info@primetradingpng.com"
+      value: "info@prime-trading.png"
     }
   ];
 
@@ -75,9 +75,10 @@ export const Contact = () => {
           {/* CTA Card */}
           <Card className="mb-12 bg-primary text-primary-foreground border-none">
             <CardContent className="p-8 text-center">
-              <h3 className="text-2xl font-bold mb-4">Request a Quotation</h3>
+              <h3 className="text-2xl font-bold mb-4">Request Catalogue & Pricing</h3>
               <p className="mb-6 text-primary-foreground/90">
-                Our team responds to all inquiries within 24 hours. Let us know how we can support your project.
+                Email us to request a catalogue, pricing information, or to discuss bulk supply options. 
+                Our team responds to all inquiries within 24 hours.
               </p>
               <Button 
                 variant="secondary"
@@ -86,10 +87,10 @@ export const Contact = () => {
                 className="no-print"
               >
                 <Mail className="mr-2 h-5 w-5" />
-                Send Email Inquiry
+                Request Catalogue & Pricing
               </Button>
               <p className="mt-4 text-sm text-primary-foreground/70">
-                Email: info@primetradingpng.com
+                Email: info@prime-trading.png
               </p>
             </CardContent>
           </Card>
